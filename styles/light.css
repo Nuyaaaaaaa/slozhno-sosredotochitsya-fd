@@ -15,31 +15,32 @@
   --primary-font-weight: 400;
   --secondary-font-weight: 700;
   --primary-font-family: "IBM Plex Mono";
-  --primary-bg-color: #000028;
+  --primary-bg-color: #fff1f7;
   --bg-image: url("../images/cover-image-light.png");
   --section-margin-b-end: 50px;
   --section-gap: 20px;
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-  background-image: var(--bg-image);
-}
-
-.theme-light .header__rec {
-  display: none;
-}
-
 .theme-light .title-decor {
   --primary-color: #ff8dcb;
+  --title-color: #353430;
 }
 
-.theme-light .header__theme-menu-button_active:hover {
-  border: 1px solid rgba(50, 49, 45, 0.4);
+.theme-light .header__theme-menu-button:hover {
+  outline: 1px solid rgba(50, 49, 45, 0.4);
+}
+
+.theme-light .section-block__link {
+  --secondary-text-color: #ff8dcb;
+  text-shadow: 2px 2px 0px var(--secondary-text-color);
 }
 
 .theme-light .section-block__text {
   --secondary-text-color: #353430;
+}
+
+.theme-light .header__rec {
+  display: none;
 }
 
 .theme-light .header__title,
@@ -56,7 +57,7 @@
     --primary-font-weight: 400;
     --secondary-font-weight: 700;
     --primary-font-family: "IBM Plex Mono";
-    --primary-bg-color: #000028;
+    --primary-bg-color: #fff1f7;
     --bg-image: url("../images/cover-image-light.png");
     --section-margin-b-end: 50px;
     --section-gap: 20px;
@@ -71,8 +72,18 @@
     display: none;
   }
 
+  .section-block__link {
+    --secondary-text-color: #ff8dcb;
+    text-shadow: 2px 2px 0px var(--secondary-text-color);
+  }
+
+  .header__theme-menu-button:hover {
+    outline: 1px solid rgba(50, 49, 45, 0.4);
+  }
+
   .title-decor {
     --primary-color: #ff8dcb;
+    --title-color: #353430;
   }
 
   .section-block__text {

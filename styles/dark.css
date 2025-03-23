@@ -9,8 +9,8 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --primary-color: #FF0070;
-  --secondary-text-color: #F1B2CE;
+  --primary-color: #ff0070;
+  --secondary-text-color: #f1b2ce;
   --title-color: #000028;
   --primary-font-weight: 400;
   --secondary-font-weight: 700;
@@ -26,4 +26,17 @@
   background-image: var(--bg-image);
 }
 
+.theme-dark .header__title,
+.theme-dark .footer__title {
+  --primary-color: #ff0070;
+  --secondary-text-color: #db00ff;
+}
 
+.theme-dark .title-decor {
+  --primary-color: #ff0070;
+  --title-color: #000028;
+}
+
+.theme-dark .section-block__text {
+  --secondary-text-color: #f1b2ce;
+}
