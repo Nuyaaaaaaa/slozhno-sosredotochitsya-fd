@@ -127,6 +127,10 @@
   line-height: 23.4px;
 }
 
+.section-block__text:not(:last-of-type) {
+  margin-block-end: 20px;
+}
+
 .section-block__link {
   text-shadow: 2px 2px 0px var(--primary-color);
   text-decoration: none;
