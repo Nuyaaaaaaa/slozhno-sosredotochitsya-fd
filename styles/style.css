@@ -16,9 +16,10 @@
   block-size: 100vh;
   min-block-size: 41.75rem;
   margin-block-end: 30px;
+  grid-template-rows: 1fr min-content 1fr;
 }
 
-.header::after {
+.decorated-zone::after {
   content: "";
   border-inline-end: 1px solid var(--primary-color);
   border-block-start: 1px solid var(--primary-color);
@@ -28,7 +29,7 @@
   right: 0;
 }
 
-.header::before {
+.decorated-zone::before {
   content: "";
   border-inline-end: 1px solid var(--primary-color);
   border-block-start: 1px solid var(--primary-color);
@@ -41,18 +42,20 @@
 }
 
 .header__theme-menu {
-  margin-block-start: 66px;
+  margin-block: 66px;
 }
 
 .header__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 4px 4px 0px var(--primary-color);
-  color: rgba(219, 0, 255, 1);
+  --secondary-text-color: #db00ff;
+  color: var(--secondary-text-color);
   block-size: max-content;
   line-height: 83%;
+  margin-block-end: 58px;
 }
 
-.decorated-item {
+.header__rec {
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -60,13 +63,12 @@
   padding-inline-end: 8px;
 }
 
-.decorated-item::before {
+.header__rec::before {
   content: "REC";
-  
 }
 
-.decorated-item::after {
-  content: '';
+.header__rec::after {
+  content: "";
   background-color: var(--primary-color);
   box-shadow: 0px 0px 4px 2px #ff0070;
   border-radius: 50%;
@@ -82,7 +84,7 @@
   text-align: center;
   text-transform: lowercase;
   line-height: 1;
-  block-size: 26px;
+  cursor: pointer;
 }
 
 .header__theme-menu-list {
@@ -93,7 +95,12 @@
 
 .header__theme-menu-button_active {
   border: 1px solid var(--primary-color);
+  block-size: 26px;
+  transition: 0.2s;
+  pointer-events: none
 }
+
+
 
 .header__theme-menu-button_active:hover {
   border: 1px solid rgba(255, 0, 112, 0.4);
@@ -113,13 +120,25 @@
 }
 
 .section-block__text {
-  color: var(--secondary-color);
+  color: var(--secondary-text-color);
   line-height: 23.4px;
 }
 
 .section-block__link {
   text-shadow: 2px 1px 0px var(--primary-color);
   text-decoration: none;
+}
+
+.section-block__link:hover {
+  text-decoration: underline;
+}
+
+.section-block__link:focus {
+  outline: none;
+}
+
+.section-block__link:focus-visible {
+  border: 1px solid var(--secondary-text-color);
 }
 
 .section-gallery {
@@ -131,7 +150,6 @@
 
 .section-gallery__container {
   display: grid;
-
   gap: inherit;
 }
 
@@ -150,33 +168,11 @@
   min-block-size: 41.75rem;
 }
 
-.footer::after {
-  content: "";
-  border-inline-end: 1px solid var(--primary-color);
-  border-block-start: 1px solid var(--primary-color);
-  width: 25px;
-  position: absolute;
-  height: 25px;
-  top: 0;
-  right: 0;
-}
-
-.footer::before {
-  content: "";
-  border-inline-end: 1px solid var(--primary-color);
-  border-block-start: 1px solid var(--primary-color);
-  transform: rotate(180deg);
-  width: 25px;
-  position: absolute;
-  height: 25px;
-  bottom: 0;
-  left: 0;
-}
-
 .footer__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 2px 2px 0px var(--primary-color);
-  color: rgba(219, 0, 255, 1);
+  --secondary-text-color: #db00ff;
+  color: var(--secondary-text-color);
   text-align: center;
   line-height: 83%;
 }
@@ -219,8 +215,6 @@
     padding: 20px;
   }
 
-
-
   .header {
     min-block-size: 64rem;
     margin-block-end: 40px;
@@ -230,23 +224,23 @@
     bottom: 37px;
   }
 
-  .decorated-item {
+  .header__rec {
     margin-block-end: 147px;
   }
 
   .header__theme-menu {
-    margin-block: 170px 0;
+    margin-block: 170px 178px;
   }
 
   .header__title {
     justify-self: start;
     margin-inline-start: -20px;
+    margin-block-end: 162px;
   }
 
   .header__text {
     max-inline-size: 364px;
   }
-
 
   .section {
     grid-template-columns: 1fr 2fr;
@@ -300,32 +294,34 @@
   }
 
   .header__title {
-    margin-block-end: 114px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-block-end: 113px;
   }
 
   .header__theme-menu {
-    margin-block: 0 273px;
+    margin-block: 0px 273px;
   }
 
   .header__theme-menu-list {
     flex-direction: row;
   }
 
-  .header__text br {
-    display: none;
-  }
-
   .header__text {
     max-inline-size: 30.688rem;
   }
 
-  .decorated-item,
+  .header__rec,
   .header__text {
     justify-self: end;
+    margin-block-end: 0;
   }
 
   .section.section--big {
     grid-template-columns: 1fr;
+  }
+
+  .section--big .section__title {
+    max-inline-size: 315px;
   }
 
   .section.section--big .section-blocks {
@@ -336,5 +332,17 @@
 
   .footer {
     min-block-size: 48rem;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .footer::before {
+    bottom: 0;
+  }
+
+  .footer::after {
+    top: 40px;
   }
 }

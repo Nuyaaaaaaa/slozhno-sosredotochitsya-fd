@@ -15,6 +15,9 @@ body {
   font-family: var(--primary-font-family, "IBM Plex Mono"), monospace;
   font-weight: var(--primary-font-weight, 400);
   background-color: var(--primary-bg-color);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 h1,
@@ -45,5 +48,3 @@ a {
   font-size: inherit;
   line-height: inherit;
 }
-
-
