@@ -6,7 +6,6 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  padding: 10px;
 }
 
 .header {
@@ -17,6 +16,7 @@
   min-block-size: 668px;
   margin-block-end: 30px;
   grid-template-rows: 1fr min-content 1fr;
+  padding: 10px;
 }
 
 .decorated-zone::after {
@@ -26,8 +26,8 @@
   width: 25px;
   position: absolute;
   height: 25px;
-  right: 0;
-  top: 0;
+  right: 10px;
+  top: 10px;
 }
 
 .decorated-zone::before {
@@ -38,12 +38,8 @@
   width: 25px;
   position: absolute;
   height: 25px;
-  left: 0;
-  bottom: 0;
-}
-
-.header.decorated-zone::before {
-  bottom: 20px;
+  left: 10px;
+  bottom: 10px;
 }
 
 .header__theme-menu {
@@ -66,8 +62,8 @@
   gap: 0.625rem;
   position: absolute;
   padding-inline-end: 8px;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
 }
 
 .header__rec::before {
@@ -77,7 +73,7 @@
 .header__rec::after {
   content: "";
   background-color: var(--primary-color);
-  box-shadow: 0px 0px 4px 2px #ff0070;
+  box-shadow: 0px 0px 4px 2px var(--primary-color);
   border-radius: 50%;
   display: block;
   inline-size: 9px;
@@ -137,7 +133,7 @@
 }
 
 .section-block__link:hover {
-  text-decoration: underline;
+  border-block-end: 1px solid var(--primary-color);
 }
 
 .section-block__link:focus {
@@ -173,14 +169,7 @@
   align-items: center;
   position: relative;
   min-block-size: 668px;
-}
-
-.footer.decorated-zone::before {
-  bottom: 9px;
-}
-
-.footer.decorated-zone::after {
-  top: 12px;
+  padding: 10px;
 }
 
 .footer__title {
@@ -223,10 +212,102 @@
 
 .content {
   margin-block-end: 40px;
+  padding: 10px;
+}
+
+.theme-light .title-decor {
+  --primary-color: #ff8dcb;
+  --title-color: #353430;
+}
+
+.theme-light .header__theme-menu-button:hover {
+  outline: 1px solid rgba(50, 49, 45, 0.4);
+}
+
+.theme-light .section-block__link {
+  --secondary-text-color: #ff8dcb;
+  text-shadow: 2px 2px 0px var(--secondary-text-color);
+}
+
+.theme-light .section-block__text {
+  --secondary-text-color: #353430;
+}
+
+.theme-light .header__title,
+.theme-light .footer__title {
+  --secondary-text-color: #ffc2e6;
+  --primary-color: #ff8dcb;
+}
+
+.theme-light .section-block__link:focus-visible {
+  outline: 1px solid #353430;
+}
+
+.theme-dark .page {
+  /* Вам также нужно будет написать ряд подобных селекторов */
+  background-image: var(--bg-image);
+}
+
+.theme-dark .header__title,
+.theme-dark .footer__title {
+  --primary-color: #ff0070;
+  --secondary-text-color: #db00ff;
+}
+
+.theme-dark .title-decor {
+  --primary-color: #ff0070;
+  --title-color: #000028;
+}
+
+.theme-dark .section-block__text {
+  --secondary-text-color: #f1b2ce;
+}
+
+.theme-dark .header__theme-menu-button:hover {
+  outline: 1px solid rgba(255, 0, 112, 0.4);
+}
+
+.theme-dark .section-block__link {
+  --secondary-text-color: #ff0070;
 }
 
 @media (min-width: 768px) {
-  .page {
+  .decorated-zone::after {
+    content: "";
+    border-inline-end: 1px solid var(--primary-color);
+    border-block-start: 1px solid var(--primary-color);
+    width: 25px;
+    position: absolute;
+    height: 25px;
+    right: 20px;
+    top: 20px;
+  }
+
+  .decorated-zone::before {
+    content: "";
+    border-inline-end: 1px solid var(--primary-color);
+    border-block-start: 1px solid var(--primary-color);
+    transform: rotate(180deg);
+    width: 25px;
+    position: absolute;
+    height: 25px;
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .header__rec {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    position: absolute;
+    padding-inline-end: 8px;
+    top: 20px;
+    right: 20px;
+  }
+
+  .header,
+  .content,
+  .footer {
     padding: 20px;
   }
 
@@ -291,27 +372,11 @@
   .section-gallery__container .section-gallery__img:nth-child(5) {
     grid-column: 2 / 4;
   }
-
-  .footer.decorated-zone::before {
-    bottom: 4px;
-  }
-
-  .footer__title {
-    margin-block-start: 33px;
-  }
-
-  .footer.decorated-zone::after {
-    top: 39px;
-  }
 }
 
 @media (min-width: 1024px) {
   .header {
     justify-items: center;
-  }
-
-  .header.decorated-zone::before {
-    bottom: 42px;
   }
 
   .header__title {
@@ -353,13 +418,5 @@
 
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
-  .footer::before {
-    bottom: 0;
-  }
-
-  .footer::after {
-    top: 40px;
   }
 }

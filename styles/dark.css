@@ -21,22 +21,6 @@
   --section-gap: 20px;
 }
 
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-  background-image: var(--bg-image);
-}
-
-.theme-dark .header__title,
-.theme-dark .footer__title {
-  --primary-color: #ff0070;
-  --secondary-text-color: #db00ff;
-}
-
-.theme-dark .title-decor {
-  --primary-color: #ff0070;
-  --title-color: #000028;
-}
-
-.theme-dark .section-block__text {
-  --secondary-text-color: #f1b2ce;
+.theme-dark .header__rec {
+  display: flex;
 }
