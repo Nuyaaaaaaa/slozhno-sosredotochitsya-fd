@@ -42,10 +42,6 @@
   bottom: 10px;
 }
 
-.header__theme-menu {
-  margin-block: 66px;
-}
-
 .header__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 4px 4px 0px var(--primary-color);
@@ -53,7 +49,6 @@
   color: var(--secondary-text-color);
   block-size: max-content;
   line-height: 83%;
-  margin-block-end: 58px;
 }
 
 .header__rec {
@@ -80,8 +75,12 @@
   block-size: 9px;
 }
 
+.header__theme-menu {
+  align-self: center;
+}
+
 .header__theme-menu-button {
-  padding: 3px 13px;
+  padding: 4px 13px;
   background-color: transparent;
   border: none;
   text-align: center;
@@ -96,10 +95,6 @@
   gap: 10px;
 }
 
-.header__theme-menu-button:hover {
-  outline: 1px solid rgba(255, 0, 112, 0.4);
-}
-
 .header__theme-menu-button_active {
   outline: 1px solid var(--primary-color);
   transition: 0.2s;
@@ -110,8 +105,18 @@
   outline: none;
 }
 
+.header__theme-menu-button:hover {
+  --primary-color: rgba(255, 0, 112, 0.4);
+  outline: 1px solid var(--primary-color);
+}
+
 .header__theme-menu-button:focus-visible {
   border-block-end: 1px solid var(--primary-color);
+  outline: none;
+}
+
+.header__text {
+  align-self: center;
 }
 
 .section-block__title {
@@ -141,7 +146,7 @@
 }
 
 .section-block__link:focus-visible {
-  outline: 1px solid var(--secondary-text-color);
+  outline: 1px solid var(--primary-color);
 }
 
 .section-gallery {
@@ -191,6 +196,7 @@
   color: inherit;
   font-size: inherit;
   font-weight: var(--secondary-font-weight, 700);
+  line-height: 23.4px;
 }
 
 .section-block:not(:last-child) {
@@ -211,98 +217,24 @@
 }
 
 .content {
-  margin-block-end: 40px;
+  margin-block-end: 30px;
   padding: 10px;
 }
 
-.theme-light .title-decor {
-  --primary-color: #ff8dcb;
-  --title-color: #353430;
-}
-
-.theme-light .header__theme-menu-button:hover {
-  outline: 1px solid rgba(50, 49, 45, 0.4);
-}
-
-.theme-light .section-block__link {
-  --secondary-text-color: #ff8dcb;
-  text-shadow: 2px 2px 0px var(--secondary-text-color);
-}
-
-.theme-light .section-block__text {
-  --secondary-text-color: #353430;
-}
-
-.theme-light .header__title,
-.theme-light .footer__title {
-  --secondary-text-color: #ffc2e6;
-  --primary-color: #ff8dcb;
-}
-
-.theme-light .section-block__link:focus-visible {
-  outline: 1px solid #353430;
-}
-
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-  background-image: var(--bg-image);
-}
-
-.theme-dark .header__title,
-.theme-dark .footer__title {
-  --primary-color: #ff0070;
-  --secondary-text-color: #db00ff;
-}
-
-.theme-dark .title-decor {
-  --primary-color: #ff0070;
-  --title-color: #000028;
-}
-
-.theme-dark .section-block__text {
-  --secondary-text-color: #f1b2ce;
-}
-
-.theme-dark .header__theme-menu-button:hover {
-  outline: 1px solid rgba(255, 0, 112, 0.4);
-}
-
-.theme-dark .section-block__link {
-  --secondary-text-color: #ff0070;
-}
-
 @media (min-width: 768px) {
-  .decorated-zone::after {
-    content: "";
-    border-inline-end: 1px solid var(--primary-color);
-    border-block-start: 1px solid var(--primary-color);
-    width: 25px;
-    position: absolute;
-    height: 25px;
+  .decorated-zone::after,
+  .header__rec {
     right: 20px;
     top: 20px;
   }
 
   .decorated-zone::before {
-    content: "";
-    border-inline-end: 1px solid var(--primary-color);
-    border-block-start: 1px solid var(--primary-color);
-    transform: rotate(180deg);
-    width: 25px;
-    position: absolute;
-    height: 25px;
-    left: 20px;
     bottom: 20px;
+    left: 20px;
   }
 
-  .header__rec {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    position: absolute;
-    padding-inline-end: 8px;
-    top: 20px;
-    right: 20px;
+  .content {
+    margin-block-end: 40px;
   }
 
   .header,
@@ -315,18 +247,9 @@
     margin-block-end: 40px;
   }
 
-  .header__rec {
-    margin-block-end: 147px;
-  }
-
-  .header__theme-menu {
-    margin-block: 170px 178px;
-  }
-
   .header__title {
     justify-self: start;
     margin-inline-start: -20px;
-    margin-block-end: 162px;
   }
 
   .header__text {
@@ -381,11 +304,10 @@
 
   .header__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-block-end: 113px;
   }
 
   .header__theme-menu {
-    margin-block: 0px 273px;
+    align-self: start;
   }
 
   .header__theme-menu-list {
@@ -396,15 +318,24 @@
     max-inline-size: 30.688rem;
   }
 
+  
+
   .header__rec,
   .header__text {
     justify-self: end;
     margin-block-end: 0;
   }
 
-  .section.section__concentration {
-    grid-template-columns: 1fr;
+  .section {
+    grid-template-columns: repeat(3, 1fr);
   }
+
+  .why .section-blocks,
+  .advices .section-blocks {
+    grid-column: 2 / span 2;
+  }
+
+  
 
   .section__concentration .section__title {
     max-inline-size: 315px;
