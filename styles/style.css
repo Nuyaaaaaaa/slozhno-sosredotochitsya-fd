@@ -261,11 +261,11 @@
     --section-margin-b-end: 80px;
   }
 
-  .section.section__concentration {
+  .section.concentration {
     grid-template-columns: 1fr;
   }
 
-  .section__concentration .section__title {
+  .concentration .section__title {
     max-inline-size: 236px;
   }
 
@@ -318,8 +318,6 @@
     max-inline-size: 30.688rem;
   }
 
-  
-
   .header__rec,
   .header__text {
     justify-self: end;
@@ -335,13 +333,11 @@
     grid-column: 2 / span 2;
   }
 
-  
-
-  .section__concentration .section__title {
+  .concentration .section__title {
     max-inline-size: 315px;
   }
 
-  .section.section__concentration .section-blocks {
+  .section.concentration .section-blocks {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--section-gap);

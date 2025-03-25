@@ -34,10 +34,14 @@
   --secondary-text-color: #353430;
 }
 
-.theme-light .header__title,
-.theme-light .footer__title {
+.theme-light .header__title {
   --secondary-text-color: #ffc2e6;
   --primary-color: #ff8dcb;
+}
+
+.theme-light .footer__title {
+  --secondary-text-color: #ffc2e6;
+  --primary-color: #ff0070;
 }
 
 .theme-light .header__theme-menu-button:hover {
@@ -117,9 +121,13 @@
     text-shadow: 2px 2px 0px var(--secondary-text-color);
   }
 
-  .header__title,
-  .footer__title {
+  .header__title {
     --secondary-text-color: #ffc2e6;
     --primary-color: #ff8dcb;
+  }
+
+  .footer__title {
+    --secondary-text-color: #ffc2e6;
+    --primary-color: #ff0070;
   }
 }
