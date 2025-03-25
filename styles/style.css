@@ -302,7 +302,8 @@
     justify-items: center;
   }
 
-  .header__title {
+  .header__title,
+  .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
@@ -315,13 +316,12 @@
   }
 
   .header__text {
-    max-inline-size: 30.688rem;
+    max-inline-size: 491px;
   }
 
   .header__rec,
   .header__text {
     justify-self: end;
-    margin-block-end: 0;
   }
 
   .section {
@@ -341,9 +341,5 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--section-gap);
-  }
-
-  .footer__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
