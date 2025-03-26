@@ -9,9 +9,16 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --primary-color: #353430;
-  --secondary-text-color: #ff8dcb;
-  --title-color: #000028;
+  --primary-color: #ff8dcb;
+  --main-text-color: #353430;
+  --primary-link-color: #353430;
+  --secondary-link-color: #ff8dcb;
+  --main-corners-color: #353535;
+  --nav-color: #353430;
+  --nav-hover-color: rgba(50, 49, 45, 0.4);
+  --main-heading-color: #353430;
+  --section-heading-color: #353430;
+  --section-heading-bg-color: #ff8dcb;
   --primary-font-weight: 400;
   --secondary-font-weight: 700;
   --primary-font-family: "IBM Plex Mono";
@@ -19,58 +26,26 @@
   --bg-image: url("../images/cover-image-light.png");
   --section-margin-b-end: 50px;
   --section-gap: 20px;
+  --header-logo-color: #ffc2e6;
+  --footer-logo-color: #ffc2e6;
 }
 
 .theme-light .header__rec {
   display: none;
 }
 
-.theme-light .title-decor {
-  --primary-color: #ff8dcb;
-  --title-color: #353430;
-}
-
-.theme-light .section-block__text {
-  --secondary-text-color: #353430;
-}
-
-.theme-light .header__title,
-.theme-light .footer__title {
-  --secondary-text-color: #ffc2e6;
-  --primary-color: #ff8dcb;
-}
-
-.theme-light .header__theme-menu-button:hover {
-  --primary-color: rgba(50, 49, 45, 0.4);
-  outline: 1px solid var(--primary-color);
-}
-
-.theme-light .header__theme-menu-button:focus {
-  outline: none;
-}
-
-.theme-light .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--primary-color);
-}
-
-.theme-light .section-block__link:hover {
-  border-block-end: 1px solid var(--primary-color);
-}
-
-.theme-light .section-block__link:focus-visible {
-  outline: 1px solid var(--primary-color);
-}
-
-.theme-light .section-block__link {
-  --secondary-text-color: #ff8dcb;
-  text-shadow: 2px 2px 0px var(--secondary-text-color);
-}
-
 @media (prefers-color-scheme: light) {
   :root {
-    --primary-color: #353430;
-    --secondary-text-color: #ff8dcb;
-    --title-color: #000028;
+    --primary-color: #ff8dcb;
+    --main-text-color: #353430;
+    --primary-link-color: #353430;
+    --secondary-link-color: #ff8dcb;
+    --main-corners-color: #353535;
+    --nav-color: #353430;
+    --nav-hover-color: rgba(50, 49, 45, 0.4);
+    --main-heading-color: #353430;
+    --section-heading-color: #353430;
+    --section-heading-bg-color: #ff8dcb;
     --primary-font-weight: 400;
     --secondary-font-weight: 700;
     --primary-font-family: "IBM Plex Mono";
@@ -78,48 +53,11 @@
     --bg-image: url("../images/cover-image-light.png");
     --section-margin-b-end: 50px;
     --section-gap: 20px;
-  }
-
-  .page {
-    /* Вам также нужно будет написать ряд подобных селекторов */
-    background-image: var(--bg-image);
+    --header-logo-color: #ffc2e6;
+    --footer-logo-color: #ffc2e6;
   }
 
   .header__rec {
     display: none;
-  }
-
-  .header__theme-menu-button:hover {
-    --primary-color: rgba(50, 49, 45, 0.4);
-    outline: 1px solid var(--primary-color);
-  }
-
-  .header__theme-menu-button:focus {
-    outline: none;
-  }
-
-  .header__theme-menu-button:focus-visible {
-    border-block-end: 1px solid var(--primary-color);
-    outline: none;
-  }
-
-  .title-decor {
-    --primary-color: #ff8dcb;
-    --title-color: #353430;
-  }
-
-  .section-block__text {
-    --secondary-text-color: #353430;
-  }
-
-  .section-block__link {
-    --secondary-text-color: #ff8dcb;
-    text-shadow: 2px 2px 0px var(--secondary-text-color);
-  }
-
-  .header__title,
-  .footer__title {
-    --secondary-text-color: #ffc2e6;
-    --primary-color: #ff8dcb;
   }
 }

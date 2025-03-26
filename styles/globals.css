@@ -12,9 +12,9 @@ body {
   margin: 0 auto;
   color: var(--primary-color);
   font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
-  font-family: var(--primary-font-family, "IBM Plex Mono"), monospace;
+  font-family: var(--main-font-family, "IBM Plex Mono"), monospace;
   font-weight: var(--primary-font-weight, 400);
-  background-color: var(--primary-bg-color);
+  background-color: var(--main-bg-color);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
